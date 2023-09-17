@@ -6,7 +6,10 @@ const connection = require('../config/connection');
 
 router.get('/', (req, res) => {
     connection.query("SELECT * FROM tb_ucapan where deleted_at IS NULL", (error, result) =>{
-        res.send(result);
+        let forReturn = {
+            "data": result
+        };
+        res.send(forReturn);
     })
 })
 
