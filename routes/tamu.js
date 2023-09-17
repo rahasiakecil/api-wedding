@@ -14,9 +14,9 @@ router.post('/', (req, res) => {
     const date = new Date();
     const body = req.body;
     let tamu = body.tamu;
-    let kehadiran = body.tamu;
-    let ucapan = body.tamu;
-    connection.query(`INSERT INTO tb_ucapan (tamu, kehadiran, ucapan, created_at) VALUES ("${tamu}", "${kehadiran}", "${ucapan}", "${date}")`, (error, result) =>{
+    let kehadiran = body.kehadiran;
+    let ucapan = body.ucapan;
+    connection.query(`INSERT INTO tb_ucapan (tamu, kehadiran, ucapan) VALUES ("${tamu}", "${kehadiran}", "${ucapan}")`, (error, result) =>{
         res.send(result);
     })
 
